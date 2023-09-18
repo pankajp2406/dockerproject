@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage("checkout") {
+            steps {
+                git 'https://github.com/pankajp2406/dockerproject.git'
+            }
+        }
+        stage("build") {
+            steps {
+                sh 'docker build -t $img .'
+            }
+        }
+        stage("tag") {
+            steps {
+                sh 'docker tag $img $repo'
+            }
+        }
+        stage("push") {
+            steps {
+                sh 'docker login -u pankaj2406 -p Winter@098'
+                sh 'docker push $repo'
+            }
+        }
+    }
+}

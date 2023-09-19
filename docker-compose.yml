@@ -1,25 +1,25 @@
 version: '3'
 Services:
   movies:
-    image: pankaj2406/movies1
+    image: pankaj2406/movienew
     ports: 
       - "81:80"
     replicas: 3
 
   train: 
-    image: pankaj2406/train1
+    image: pankaj2406/trainnew
     ports:
       - "82:80"
     replicas: 3
 
   recharge: 
-    image: pankaj2406/recharge1
+    image: pankaj2406/rechargenew
     ports: 
       - "83:80"
     replicas: 3
 
   dth: 
-    image: pankaj2406/dth1
+    image: pankaj2406/dthnew
     ports:
       - "84:80"
     replicas: 3
